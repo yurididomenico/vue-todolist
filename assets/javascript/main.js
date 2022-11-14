@@ -47,6 +47,12 @@ var app = new Vue
         },
         methods:
         {
+            deleteElement(index)
+            {
+                //Rimuovo oggetto dall'array
+                this.todoList.splice(index, 1);
+            },
+
             refresh()
             {
                 location.reload()
