@@ -29,6 +29,7 @@ var app = new Vue
         el: '#root',
         data:
         {
+            text: "",
             todoList:
             [
                 {
@@ -47,6 +48,11 @@ var app = new Vue
         },
         methods:
         {
+            addElement()
+            {
+                this.todoList.push({text: this.text, done: false});
+            },
+
             deleteElement(index)
             {
                 //Rimuovo oggetto dall'array
