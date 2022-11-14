@@ -29,12 +29,12 @@ var app = new Vue
         el: '#root',
         data:
         {
-            text: "",
+            testo: "",
             todoList:
             [
                 {
                     text: 'task_1',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'task_2',
@@ -44,20 +44,37 @@ var app = new Vue
                     text: 'task_3',
                     done: false
                 }
-            ]
+            ],
+            todoDone: []
+        },
+
+        beforeUpdate()
+        {
+            this.todoList.forEach((elem, index) =>
+            {
+                if(elem.done == true)
+                {
+                    this.todoDone.push(elem);
+                    this.todoList.splice(index, 1)
+                }    
+            });    
         },
 
         methods:
         {
             addElement()
             {
-                this.todoList.push({text: this.text, done: false});
+                this.todoList.push({text: this.testo, done: false});
             },
 
-            deleteElement(index)
+            deleteElement(elem, index)
             {
                 //Rimuovo oggetto dall'array
-                this.todoList.splice(index, 1);
+                if(elem.done == true)
+                {
+                    this.todoDone.splice(index, 1);
+                }
+                else this.todoList.splice(index, 1);
             },
 
             todoCompleted(index)
