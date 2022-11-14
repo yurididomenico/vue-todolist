@@ -33,7 +33,7 @@ var app = new Vue
             [
                 {
                     text: 'task_1',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'task_2',

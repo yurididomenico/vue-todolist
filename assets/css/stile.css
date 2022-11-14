@@ -38,7 +38,11 @@ a
 
 
 /* |||||||||| AREA TEST |||||||||| */
-
+.fa-xmark:hover,
+.personal-elementiLista
+{
+  cursor: pointer;
+}
 
 
 
