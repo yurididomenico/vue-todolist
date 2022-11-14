@@ -46,6 +46,7 @@ var app = new Vue
                 }
             ]
         },
+
         methods:
         {
             addElement()
@@ -57,6 +58,19 @@ var app = new Vue
             {
                 //Rimuovo oggetto dall'array
                 this.todoList.splice(index, 1);
+            },
+
+            todoCompleted(index)
+            {
+                //modifico lo stato della proprietà
+                if(this.todoList[index].done == false)
+                {
+                    this.todoList[index].done = true;
+                }
+                else
+                {
+                    this.todoList[index].done = false;
+                }
             },
 
             refresh()
