@@ -47,7 +47,10 @@ var app = new Vue
         },
         methods:
         {
-
+            refresh()
+            {
+                location.reload()
+            }
         }
     }
 )
